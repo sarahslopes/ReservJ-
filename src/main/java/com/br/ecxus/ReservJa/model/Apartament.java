@@ -25,7 +25,7 @@ public class Apartament {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "ap_name", nullable = false, unique = true , length = 5)
+    @Column(nullable = false, unique = true , length = 5)
     private String name;
     @Column(nullable = false, length = 4)
     private Integer customers;
