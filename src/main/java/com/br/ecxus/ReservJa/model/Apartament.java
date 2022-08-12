@@ -29,7 +29,7 @@ public class Apartament {
     @Column(nullable = false, length = 5)
     private String customers;
     @Enumerated(EnumType.STRING)
-    private String status;
+    private Status status;
     
 }
 

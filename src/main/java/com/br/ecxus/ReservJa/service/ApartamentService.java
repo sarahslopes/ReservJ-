@@ -2,6 +2,8 @@ package com.br.ecxus.ReservJa.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,7 @@ public class ApartamentService {
     @Autowired
     ApartamentRepository repository;
 
-    public Apartament create(Apartament apartament) {
+    public Apartament create(@Valid Apartament apartament) {
         return repository.save(apartament);
     }
 
@@ -34,7 +36,7 @@ public class ApartamentService {
         return repository.findByRoom(room);
     }
 
-    public Apartament update(Apartament apartament) {
+    public Apartament update(@Valid Apartament apartament) {
         return create(apartament);
 
     }
