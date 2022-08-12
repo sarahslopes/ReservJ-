@@ -30,6 +30,10 @@ public class ApartamentService {
         return repository.findByName(name);
     }
 
+    public Object listByRoom(String room){
+        return repository.findByRoom(room);
+    }
+
     public Apartament update(Apartament apartament) {
         return create(apartament);
 
