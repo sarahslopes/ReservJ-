@@ -2,6 +2,8 @@ package com.br.ecxus.ReservJa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class Apartament {
     private String room;
     @Column(nullable = false, length = 5)
     private String customers;
-    @Column(nullable = false, length = 50)
+    @Enumerated(EnumType.STRING)
     private String status;
     
 }
