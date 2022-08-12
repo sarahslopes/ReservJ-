@@ -20,6 +20,7 @@ import com.br.ecxus.ReservJa.model.Apartament;
 import com.br.ecxus.ReservJa.service.ApartamentService;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/api")
@@ -66,7 +67,7 @@ public class ApartamentController {
     @PatchMapping("/update/{id}")
     @ApiOperation("Atualização / edição do apartamento pelo id")
     @ResponseStatus(HttpStatus.CREATED)
-    public @ResponseBody Apartament update(@PathVariable Apartament apartament) {
+    public @ResponseBody Apartament update(@PathVariable Integer id, @RequestBody @Valid Apartament apartament) {
         return service.create(apartament);
     }
 
