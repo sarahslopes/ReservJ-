@@ -2,6 +2,8 @@ package com.br.ecxus.ReservJa.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,7 +22,7 @@ import com.br.ecxus.ReservJa.service.ApartamentService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/api/apartament")
+@RequestMapping("/api")
 public class ApartamentController {
 
     @Autowired
@@ -29,29 +31,36 @@ public class ApartamentController {
     @PostMapping("/create")
     @ApiOperation("Cadastro de um apartamento")
     @ResponseStatus(HttpStatus.CREATED)
-    public @ResponseBody Apartament create(Apartament apartament) {
+    public @ResponseBody Apartament create(@Valid Apartament apartament) {
         return service.create(apartament);
     }
 
     @GetMapping("/list")
     @ApiOperation("Listagem de apartamentos cadastrados")
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public List<Apartament> list() {
         return service.list();
     }
 
     @GetMapping("/listId/{id}")
     @ApiOperation("Listagem do apartamento pelo id")
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public Object listById(@PathVariable Integer id) {
         return service.listById(id);
     }
 
     @GetMapping("/listName/{name}")
     @ApiOperation("Listagem do apartamento pelo nome")
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public Object listByName(@PathVariable String name) {
         return service.listByName(name);
+    }
+
+    @GetMapping("/listRoom/{room}")
+    @ApiOperation("Listagem do apartamento pelo quarto")
+    @ResponseStatus(HttpStatus.OK)
+    public Object listByRoom(@PathVariable String room) {
+        return service.listByRoom(room);
     }
 
     @PatchMapping("/update/{id}")
