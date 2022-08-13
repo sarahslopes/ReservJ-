@@ -45,6 +45,10 @@ A api utiliza do banco de dados MySql, para utilizar o seu banco com usuário lo
 
 Com o servidor embarcado startado, a documentação personalizada da Api com o Swagger ficará disponível na url: http://localhost:8090/swagger-ui/index.html para ser acessada após autenticação com as credenciais de teste listadas no módulo anterior. Na documentação estão listados todos os métodos detalhadamente com seus parâmetros requeridos bem como na Figura 1 abaixo.
 
+![image](https://user-images.githubusercontent.com/92373290/184497647-dc6b65a5-3a7b-4dc0-a37d-ab413b4968d2.png)
+Figura 1 - Página inicial Swagger 
+
+
 
 
 
